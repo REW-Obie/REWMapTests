@@ -4,15 +4,15 @@ const listingSelectors = {
     bcse: '.listings .brewImage',
     elite: '.uk-grid .idx-background-image-link',
     fese: '.listings .action-detail',
-    Enterprise: '.listings .article__photo'
+    Enterprise: '.listings .article__photo',
+    'pt-1r': '.listings .brewImage',
+    'lec-2015': '.photo .info-links'
 };
 
-const mapButtonSelectors = {
-    bcse: '.view',
-    elite: '#view-map',
-    fese: '.view-map',
-    Enterprise: '.view-map'
-};
+/**
+ * @param {object} body - The body tag
+ * @returns {string} Selector for first listing
+ */
 
 export function getListingSelector(body) {
     for (let prop in listingSelectors) {
@@ -22,6 +22,11 @@ export function getListingSelector(body) {
     }
 }
 
+/**
+ * @param {object} body - The body tag
+ * @returns {string} Selector for the map container
+ */
+
 export function getMapContainer(body) {
     if (body.attributes.class.includes('elite')) {
         return Selector('.fw-idx-map')();
@@ -30,9 +35,14 @@ export function getMapContainer(body) {
     }
 }
 
+/**
+ * @param {object} body - The body tag
+ * @returns {string} Selector for "map" button
+ */
+
 export function getMapButton(body) {
     if (body.attributes.class.includes('elite')) {
-        return Selector('#view-map')(); // TODO: Figure out why this button isn't being found
+        return Selector('.toolbar #view-map')();
     } else {
         return Selector('[href="#map"]')();
     }

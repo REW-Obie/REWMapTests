@@ -1,15 +1,23 @@
 import {Selector} from 'testcafe';
 
-const siteUrlBroken = 'http://www.losangelesrealestate.com';
+/**
+ * Test URLs
+ * Unable to find a broken site on REWCRM
+ */
+
 const siteUrlFixed = 'http://www.advantagerealestate.com';
-const siteUrlElite = 'http://www.murfreesborosmls.com/';
+
+/**
+ * DOM Elements
+ * Covers only REWCRM for now
+ */
 
 const loginButton = Selector('.btn');
 const loginField = Selector('input[name="username"]');
 const defaultSearch = Selector('a[href="/backend/idx/default-search/"]');
 const mapContainer = Selector('#idx-builder-map');
 
-fixture `IDX Page`
+fixture `IDX Default Search - Backend`
     .page `${siteUrlFixed}`;
 
 test('Backend default search has a map', async t => {

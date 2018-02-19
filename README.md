@@ -4,15 +4,13 @@ These tests are based on the test cases documented [here](https://goo.gl/xNa2Tu)
 
 #### To run tests
 
+`npm install -g testcafe`
+
 `cd path/to/this/directory`
 
-run `npm install -g testcafe`
+run `npm run test`
 
-run `testCafe [browser] path/to/testFile.js`
-
-E.g
-
-`testcafe chrome src/backEnd/idxDefaultSearchTest.js`
+E.g `testcafe chrome src/backEnd/idxDefaultSearchTest.js`
 
 #### Tools
 
@@ -20,4 +18,13 @@ E.g
 
 #### Requirements
 
-- node >=4.0.0
+- node >= 4.0.0
+
+#### Themes Covered
+
+- BCSE
+- Elite
+- Enterprise
+- FESE
+- PT-1R
+- LEC-2015
